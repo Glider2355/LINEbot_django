@@ -1,1 +1,1 @@
-web: gunicorn django_website.wsgi
+web: gunicorn KUglider_platform.wsgi
