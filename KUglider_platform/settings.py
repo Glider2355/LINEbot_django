@@ -155,4 +155,4 @@ EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 DEFAULT_FROM_EMAIL = "mryou120722@gmail.com"
 SERVER_EMAIL = "mryou120722@gmail.com"
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
