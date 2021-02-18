@@ -1,1 +1,1 @@
-web: gunicorn KUglider_platform.wsgi --log-file -
+web: gunicorn KUglider_platform.wsgi
