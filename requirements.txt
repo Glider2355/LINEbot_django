@@ -1,6 +1,8 @@
 django
+line-bot-sdk
 whitenoise
 gunicorn
+django-heroku
 dj-database-url
 python-dotenv
 psycopg2-binary

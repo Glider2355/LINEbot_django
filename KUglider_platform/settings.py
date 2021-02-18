@@ -16,6 +16,7 @@ from dotenv import (
 )
 import dj_database_url
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,13 +37,14 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'website',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'website',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +63,7 @@ ROOT_URLCONF = 'KUglider_platform.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'Asia/Tokyo'
 
@@ -124,6 +126,33 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+LOGIN_URL = "/login/"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/login/"
+
+# 暗号化されたhttpsを使うようにする
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+
+AUTH_USER_MODEL = 'website.User'
+
+# ローカル時
+# FRONTEND_URL = "http://127.0.0.1:8000/"
+
+# リモート時
+FRONTEND_URL = "https://ku-glider-platform.herokuapp.com/"
+
+ANYMAIL = {
+    "MAILGUN_API_KEY": "74f30adde8931751bed89f9edb65d5a5-d32d817f-25b58446",
+    "MAILGUN_SENDER_DOMAIN": 'sandboxf065e772fe91470bb72edf6d475a9054.mailgun.org',
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
+DEFAULT_FROM_EMAIL = "mryou120722@gmail.com"
+SERVER_EMAIL = "mryou120722@gmail.com"
+
+django_heroku.settings(locals())
