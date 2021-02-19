@@ -135,11 +135,10 @@ LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login/"
 
-"""
 # 暗号化されたhttpsを使うようにする
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
-"""
+
 AUTH_USER_MODEL = 'website.User'
 
 # ローカル時
