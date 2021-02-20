@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, ListView, DetailView
 from .models import Post
 from django.urls import reverse_lazy
 from .forms import SignUpForm
+from django.http import HttpResponseRedirect
 
 
 class PistoView(TemplateView):
@@ -58,6 +59,12 @@ class SignUpView(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+
+    def form_valid(self, form):
+        User = form.save()
+        Login(self.request, User)
+        self.object = User
+        return HttpResponseRedirect(self.get_success_url())
 
 
 """
