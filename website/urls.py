@@ -17,8 +17,6 @@ urlpatterns = [
     path('update/<pk>', login_required(views.Update.as_view()), name="update"),
     path('delete/<pk>', login_required(views.Delete.as_view()), name="delete"),
     path("signup/", login_required(views.SignUpView.as_view()), name="signup"),
-    path('activate/<uidb64>/<token>/',
-         views.ActivateView.as_view(), name='activate'),
     path('mypage/', mypage_site.urls),
     path('staff-admin/', admin.site.urls),
     # path('callback/', views.callback, name='callback'),

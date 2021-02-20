@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ag_=stx-8#c+5omuhu5w_1_ge++8nvfse91qm-b5p-gwb51xa4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -148,13 +147,5 @@ AUTH_USER_MODEL = 'website.User'
 
 # リモート時
 FRONTEND_URL = "https://ku-glider-platform.herokuapp.com/"
-
-ANYMAIL = {
-    "MAILGUN_API_KEY": "74f30adde8931751bed89f9edb65d5a5-d32d817f-25b58446",
-    "MAILGUN_SENDER_DOMAIN": 'sandboxf065e772fe91470bb72edf6d475a9054.mailgun.org',
-}
-EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
-DEFAULT_FROM_EMAIL = "mryou120722@gmail.com"
-SERVER_EMAIL = "mryou120722@gmail.com"
 
 django_heroku.settings(locals())
