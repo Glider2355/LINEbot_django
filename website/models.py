@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse_lazy
+from django.contrib.auth.models import AbstractUser
 
 
 class Category(models.Model):
@@ -77,3 +78,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy("detail", args=[self.id])
+
+
+class User(AbstractUser):
+    email = models.EmailField('メールアドレス', unique=False)
