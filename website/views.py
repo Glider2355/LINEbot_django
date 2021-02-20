@@ -64,7 +64,7 @@ class SignUpView(CreateView):
         User = form.save()
         Login(self.request, User)
         self.object = User
-        return redirect(self.get_success_url())
+        return redirect('/')
 
 
 """
