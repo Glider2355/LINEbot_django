@@ -90,6 +90,6 @@ class BlogAdminSite(AdminSite):
 
 mypage_site = BlogAdminSite(name="mypage")
 
-mypage_site.register(models.Post, PostAdmin)
+mypage_site.register(models.Post)
 mypage_site.register(models.Tag)
-mypage_site.register(models.Category, CategoryAdmin)
+mypage_site.register(models.Category)
