@@ -3,16 +3,7 @@ from django.views.generic.edit import UpdateView
 from django.views.generic import TemplateView, ListView, DetailView
 from .models import Post
 from django.urls import reverse_lazy
-from django.contrib.auth.forms import UserCreationForm
-
-
-class IndexView(TemplateView):
-    template_name = "index.html"
-
-    def get_context_data(self):
-        context = super().get_context_data()
-        context["username"] = "太郎"
-        return context
+from .forms import SignUpForm
 
 
 class PistoView(TemplateView):
@@ -64,7 +55,7 @@ class Login(TemplateView):
 
 
 class SignUpView(CreateView):
-    form_class = UserCreationForm
+    form_class = SignUpForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
