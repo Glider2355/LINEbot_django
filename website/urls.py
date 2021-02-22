@@ -7,7 +7,7 @@ from .admin import mypage_site
 from django.contrib import admin
 
 urlpatterns = [
-    path('', login_required(views.Login.as_view()), name="login"),
+    path('', login_required(views.index.as_view()), name="index"),
     path('pisto/', login_required(views.PistoView.as_view())),
     path('blog/post_list/',
          login_required(views.Blog.as_view()), name="blog"),

@@ -81,4 +81,4 @@ class Post(models.Model):
 
 
 class User(AbstractUser):
-    email = models.EmailField('メールアドレス', blank=True)
+    REQUIRED_FIELDS = []

@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'website',
+    'rolepermissions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -149,3 +150,5 @@ AUTH_USER_MODEL = 'website.User'
 FRONTEND_URL = "https://ku-glider-platform.herokuapp.com/"
 
 django_heroku.settings(locals())
+
+ROLEPERMISSIONS_MODULE = 'website.roles'

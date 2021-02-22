@@ -50,14 +50,14 @@ class Delete(DeleteView):
     success_url = "/blog/post_list"
 
 
-class Login(TemplateView):
+class index(TemplateView):
     template_name = "registration/index.html"
 
 
 class SignUpView(CreateView):
     form_class = SignUpForm
-    success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+    success_url = reverse_lazy('login')
 
 
 """
