@@ -1,10 +1,10 @@
 {% extends "blog/base.html" %}
 {% block main %}
-<h3>BOT通知一覧</h3>
+<h3>学科資料一覧</h3>
 <ol>
     {% for post in object_list %}
     <li><a href="{% url 'detail' post.id %}">{{ post.title }}</a></li>
     {% endfor %}
 </ol>
-<p><a href="{% url 'create' %}">新規通知設定</a></p>
+<p><a href="{% url 'create' %}">学科資料作成</a></p>
 {% endblock %}

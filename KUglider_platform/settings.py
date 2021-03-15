@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ag_=stx-8#c+5omuhu5w_1_ge++8nvfse91qm-b5p-gwb51xa4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -135,19 +135,11 @@ LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login/"
 
-
 # 暗号化されたhttpsを使うようにする
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 
-
 AUTH_USER_MODEL = 'website.User'
-
-# ローカル時
-# FRONTEND_URL = "http://127.0.0.1:8000/"
-
-# リモート時
-FRONTEND_URL = "https://ku-glider-platform.herokuapp.com/"
 
 django_heroku.settings(locals())
 

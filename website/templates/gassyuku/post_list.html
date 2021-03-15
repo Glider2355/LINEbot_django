@@ -1,0 +1,10 @@
+{% extends "gassyuku/base.html" %}
+{% block main %}
+<h3>合宿一覧</h3>
+<ol>
+    {% for post in object_list %}
+    <li><a href="{% url 'gassyuku_detail' post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+</ol>
+<p><a href="{% url 'gassyuku_create' %}">合宿新規作成</a></p>
+{% endblock %}
