@@ -144,8 +144,8 @@ class SignUpView(CreateView):
 @csrf_exempt
 def callback(request):
 
-    YOUR_CHANNEL_ACCESS_TOKEN = "ga3RTbFajryJHCJWQZGN8+it8YPgBMlqcDQnYhoOY9IGwW1NFoH4viAdEOTgE3VIn+ha9uYYnoNlBKuvTC6B7djAaU1dFgro9KhOsBi5D8BUcNfi0oX0uaSS+h7hkN51NtIoTsFWe85RwQjji6hQHQdB04t89/1O/w1cDnyilFU="
-    groupid = 'Cb6b3f7abfc4ce53eb1aeccb7412db99b'
+    YOUR_CHANNEL_ACCESS_TOKEN = "あなたのLINEのチャンネルアクセストークン"
+    groupid = '送信先のグループID'
     line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 
     class today:
