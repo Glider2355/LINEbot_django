@@ -30,12 +30,12 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(models.Pisto_Alert_Category)
 class Pisto_CategoryAdmin(admin.ModelAdmin):
-    inlines = [Pisto_PostInline]
+    pass
 
 
 @admin.register(models.Alert_Category)
 class Alert_CategoryAdmin(admin.ModelAdmin):
-    inlines = [Alert_PostInline]
+    pass
 
 
 @admin.register(models.Alert_Tag)

@@ -13,6 +13,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = '資料庫カテゴリー'
+        verbose_name_plural = '資料庫カテゴリー'
+
 
 class Alert_Category(models.Model):
     name = models.CharField(
@@ -23,6 +27,10 @@ class Alert_Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'アラートカテゴリー'
+        verbose_name_plural = 'アラートカテゴリー'
 
 
 class Pisto_Alert_Category(models.Model):
@@ -35,6 +43,10 @@ class Pisto_Alert_Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = '合宿アラートカテゴリー'
+        verbose_name_plural = '合宿アラートカテゴリー'
+
 
 class Tag(models.Model):
     name = models.CharField(
@@ -45,6 +57,10 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = '資料庫タグ'
+        verbose_name_plural = '資料庫タグ'
 
 
 class Alert_Tag(models.Model):
@@ -57,6 +73,10 @@ class Alert_Tag(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'アラートタグ'
+        verbose_name_plural = 'アラートタグ'
+
 
 class Pisto_Alert_Tag(models.Model):
     name = models.CharField(
@@ -67,6 +87,10 @@ class Pisto_Alert_Tag(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = '合宿アラートタグ'
+        verbose_name_plural = '合宿アラートタグ'
 
 
 class Post(models.Model):
@@ -123,6 +147,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse_lazy("detail", args=[self.id])
 
+    class Meta:
+        verbose_name = '資料庫'
+        verbose_name_plural = '資料庫'
+
 
 class Alert(models.Model):
     schedule = models.DateTimeField(
@@ -177,6 +205,10 @@ class Alert(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy("alert", args=[self.id])
+
+    class Meta:
+        verbose_name = 'アラート設定'
+        verbose_name_plural = 'アラート設定'
 
 
 class Pisto_Alert(models.Model):
@@ -240,6 +272,10 @@ class Pisto_Alert(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy("gassyuku", args=[self.id])
+
+    class Meta:
+        verbose_name = '合宿アラート設定'
+        verbose_name_plural = '合宿アラート設定'
 
 
 class User(AbstractUser):
