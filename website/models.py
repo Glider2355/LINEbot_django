@@ -29,8 +29,8 @@ class Alert_Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'アラートカテゴリー'
-        verbose_name_plural = 'アラートカテゴリー'
+        verbose_name = 'リマインダーカテゴリー'
+        verbose_name_plural = 'リマインダーカテゴリー'
 
 
 class Pisto_Alert_Category(models.Model):
@@ -44,8 +44,8 @@ class Pisto_Alert_Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = '合宿アラートカテゴリー'
-        verbose_name_plural = '合宿アラートカテゴリー'
+        verbose_name = '合宿リマインダーカテゴリー'
+        verbose_name_plural = '合宿リマインダーカテゴリー'
 
 
 class Tag(models.Model):
@@ -74,8 +74,8 @@ class Alert_Tag(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'アラートタグ'
-        verbose_name_plural = 'アラートタグ'
+        verbose_name = 'リマインダータグ'
+        verbose_name_plural = 'リマインダータグ'
 
 
 class Pisto_Alert_Tag(models.Model):
@@ -89,8 +89,8 @@ class Pisto_Alert_Tag(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = '合宿アラートタグ'
-        verbose_name_plural = '合宿アラートタグ'
+        verbose_name = '合宿リマインダータグ'
+        verbose_name_plural = '合宿リマインダータグ'
 
 
 class Post(models.Model):
@@ -166,7 +166,7 @@ class Alert(models.Model):
         editable=True,
         blank=False,
         null=False,
-        verbose_name="アラート日"
+        verbose_name="リマインダー日"
     )
 
     title = models.CharField(
@@ -179,7 +179,7 @@ class Alert(models.Model):
     body = models.TextField(
         blank=True,
         null=False,
-        verbose_name="アラート文",
+        verbose_name="リマインダー文",
         help_text="HTMLタグは使えません。"
     )
 
@@ -207,8 +207,8 @@ class Alert(models.Model):
         return reverse_lazy("alert", args=[self.id])
 
     class Meta:
-        verbose_name = 'アラート設定'
-        verbose_name_plural = 'アラート設定'
+        verbose_name = 'リマインダー設定'
+        verbose_name_plural = 'リマインダー設定'
 
 
 class Pisto_Alert(models.Model):
@@ -274,8 +274,8 @@ class Pisto_Alert(models.Model):
         return reverse_lazy("gassyuku", args=[self.id])
 
     class Meta:
-        verbose_name = '合宿アラート設定'
-        verbose_name_plural = '合宿アラート設定'
+        verbose_name = '合宿リマインダー設定'
+        verbose_name_plural = '合宿リマインダー設定'
 
 
 class User(AbstractUser):
