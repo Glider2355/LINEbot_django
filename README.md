@@ -1,5 +1,22 @@
 # 航空部LINEリマインダーBot
+## 動作確認
+- テスト環境 
+  - bot管理サイト: <https://test-line-bot-django.herokuapp.com/staff-admin/> 
+  - ユーザーID: admin 
+  - パスワード: editor 
+ 
+    ![image](https://user-images.githubusercontent.com/62125008/120919073-b2dac880-c6f2-11eb-916c-9434404e3bf0.png)
+  - LINEbotのQR(上記のQRからLINEで友達追加してください)
 
+リマインダーは午前10時に自動で通知されます。(通知するものはリマインダー日で設定した日付で判断します。)
+
+手動で通知したい場合は以下のURLにアクセスすることでもリマインダーの通知を流すことができます。
+
+<https://test-line-bot-django.herokuapp.com/callback/> 
+- 使用例
+  - https://ku-glider-platform.herokuapp.com/mypage/
+  - ユーザーID: viewer  (実際に私の所属する航空部のグループLINEにて運用中の為、編集権限はありません。)
+  - パスワード: non_editor 
 ## 機能
 - リマインダー設定
   - Botに設定したいリマインダーを設定する(カテゴリー、タグは後の検索用に付けてください)
