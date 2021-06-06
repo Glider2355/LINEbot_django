@@ -12,7 +12,7 @@
 
 手動で通知したい場合は以下のURLにアクセスすることでもリマインダーの通知を流すことができます。
 
-<https://test-line-bot-django.herokuapp.com/callback/> 
+通知トリガーURL: <https://test-line-bot-django.herokuapp.com/callback/> 
 - 使用例
   - https://ku-glider-platform.herokuapp.com/mypage/
   - ユーザーID: viewer  (実際に私の所属する航空部のグループLINEにて運用中の為、編集権限はありません。)
