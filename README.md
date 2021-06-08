@@ -1,6 +1,6 @@
 # 航空部LINEリマインダーBot
 ## 動作確認
-- テスト環境 
+- テスト環境 \
 ※初回のアクセスは時間がかかります。
   - bot管理サイト: <https://test-line-bot-django.herokuapp.com/staff-admin/> 
   - ユーザーID: admin 
