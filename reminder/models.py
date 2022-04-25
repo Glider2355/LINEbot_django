@@ -1,0 +1,96 @@
+from django.db import models
+from django.urls import reverse_lazy
+from django.contrib.auth.models import AbstractUser
+
+
+class Alert_Category(models.Model):
+    name = models.CharField(
+        max_length=255,
+        blank=False,
+        null=False,
+        unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'リマインダーカテゴリー'
+        verbose_name_plural = 'リマインダーカテゴリー'
+
+
+class Alert_Tag(models.Model):
+    name = models.CharField(
+        max_length=255,
+        blank=False,
+        null=False,
+        unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'リマインダータグ'
+        verbose_name_plural = 'リマインダータグ'
+
+
+class Alert(models.Model):
+    schedule = models.DateTimeField(
+        auto_now_add=False,
+        editable=True,
+        blank=False,
+        null=False,
+        verbose_name="予定日"
+    )
+
+    alert_time = models.DateTimeField(
+        auto_now=False,
+        editable=True,
+        blank=False,
+        null=False,
+        verbose_name="リマインダー日"
+    )
+
+    title = models.CharField(
+        max_length=255,
+        blank=False,
+        null=False,
+        verbose_name="タイトル"
+    )
+
+    body = models.TextField(
+        blank=True,
+        null=False,
+        verbose_name="リマインダー文",
+        help_text="HTMLタグは使えません。"
+    )
+
+    category = models.ForeignKey(
+        Alert_Category,
+        on_delete=models.CASCADE,
+        verbose_name="カテゴリ"
+    )
+
+    tags = models.ManyToManyField(
+        Alert_Tag,
+        blank=True,
+        verbose_name="タグ"
+    )
+
+    published = models.BooleanField(
+        default=True,
+        verbose_name="公開する"
+    )
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse_lazy("alert", args=[self.id])
+
+    class Meta:
+        verbose_name = 'リマインダー設定'
+        verbose_name_plural = 'リマインダー設定'
+
+
+class User(AbstractUser):
+    REQUIRED_FIELDS = []
